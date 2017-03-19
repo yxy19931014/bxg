@@ -6,15 +6,18 @@
 
         $url=$_SERVER['PATH_INFO'];
 
-        $arr=explode('/',substr($url,1));//去掉第一个斜杠
 
+        $arr=explode('/',substr($url,1));//去掉第一个斜杠
         if(count($arr)==2){
             $path=$arr[0];
             $filename=$arr[1];
+        }else {
+            $str=substr($url,1);
+            $filename=$str;
+
         }
     }else {
         $filename='login';
     }
-
     include('./view/'.$path.'/'.$filename.'.html');
 ?>
