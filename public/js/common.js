@@ -62,4 +62,5 @@ define(['jquery','template','cookie'],function($,template){
 	var render=template.compile(tpl);
 	var html=render(obj);
 	$('.aside .profile').html(html);
+	
 });

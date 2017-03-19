@@ -1,8 +1,9 @@
 /**
  * Created by thinkpad on 2017/3/18.
  */
-define(['echarts'],function(echarts){
+define(['echarts','jquery','util'],function(echarts,$,util){
     // 基于准备好的dom，初始化echarts实例
+    util.setMenu(location.pathname);
     var myChart = echarts.init(document.getElementById('main'));
     // 指定图表的配置项和数据
     var option = {
