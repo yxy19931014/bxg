@@ -12,8 +12,7 @@
             $path=$arr[0];
             $filename=$arr[1];
         }else {
-            $str=substr($url,1);
-            $filename=$str;
+            $filename="login";
 
         }
     }else {
