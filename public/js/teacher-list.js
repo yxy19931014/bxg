@@ -1,7 +1,7 @@
 /**
  * Created by thinkpad on 2017/3/19.
  */
-define(['jquery','template','util','bootstrap','overlay'],function ($,template,util) {
+define(['jquery','template','util','bootstrap'],function ($,template,util) {
     util.setMenu(location.pathname);
     $.ajax({
         type:'get',

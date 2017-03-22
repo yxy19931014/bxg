@@ -1,4 +1,4 @@
-define(['jquery','template','cookie'],function($,template){
+define(['jquery','template','cookie','overlay'],function($,template){
 
 	// 控制左侧导航菜单的显示和隐藏
 	$('.navs ul').prev('a').on('click', function () {
@@ -45,7 +45,8 @@ define(['jquery','template','cookie'],function($,template){
 			dataType : 'json',
 			success : function(data){
 				if(data.code == 200){
-					location.href = '/login';
+					console.log(data);
+					location.href = '/index/login';
 				}
 			}
 		});

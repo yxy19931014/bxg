@@ -728,3 +728,6 @@ a:focus {
   min-height: 240px;
   padding: 15px 10px;
 }
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left {
+  z-index: 99999;
+}
