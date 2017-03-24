@@ -6,7 +6,7 @@ define(['jquery'],function ($) {
     return {
         setMenu:function (pathname) {
             $(".navs a").removeClass("active");
-            $('.navs a[href="'+pathname+'"]').addClass('active').closest('ul').show();
+            $('.navs a[href="'+pathname+'"]').addClass('active');
         },
         qs:function (pname) {
             var pathname=location.search;

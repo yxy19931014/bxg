@@ -14,6 +14,26 @@ define(['jquery','template','util','ckeditor','validate','form'],function ($,tem
         success:function (data) {
             var html=template('basicTpl',data.result);
             $("#basicInfo").html(html);
+            // 子级分类处理
+            $('#topCategory').change(function () {
+                var cg_id=$(this).val();
+                $.ajax({
+                    type:'get',
+                    url:'/api/category/child',
+                    data:{
+                        cg_id:cg_id
+                    },
+                    dataType:'json',
+                    success:function (data) {
+                        var tpl='{{each list as item}}<option value="{{item.cg_id}}">{{item.cg_name}}</option>{{/each}}';
+                        var render=template.compile(tpl);
+                        var html=render({list:data.result});
+                        $('#childCategory').html(html);
+                    }
+                })
+            });
+
+
             // 富文本处
             CKEDITOR.replace('ckeditor',{
                 toolbarGroups: [{

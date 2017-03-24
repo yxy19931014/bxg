@@ -19,7 +19,8 @@ require.config({
         form:'assets/form/jquery.form',
         uploadify:'assets/uploadify/jquery.uploadify',
         region:'assets/jquery-region/jquery.region',
-        ckeditor:'assets/ckeditor/ckeditor'
+        ckeditor:'assets/ckeditor/ckeditor',
+        Jcrop:'assets/jcrop/js/Jcrop'
     },
     // 把bootstrap转成标准模块
     shim:{
@@ -37,6 +38,9 @@ require.config({
         },
         ckeditor:{
             exports:'CKEDITOR',
+            deps:['jquery']
+        },
+        Jcrop:{
             deps:['jquery']
         }
     }

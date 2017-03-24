@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include("/view/common/style.html")?>
+    <link rel="stylesheet" href="/public/assets/jcrop/css/Jcrop.css">
+
 </head>
 <body>
     
@@ -14,6 +16,12 @@
         <div class="container-fluid">
             <!-- 头部 -->
             <?php include("/view/common/header.html")?>
+            <form action=""style="display:none"id="cropForm">
+                <input type="text"name="x"id="crop_x">
+                <input type="text"name="y"id="crop_y">
+                <input type="text"name="w"id="crop_w">
+                <input type="text"name="h"id="crop_h">
+            </form>
             <div class="body course-add"id="pictureInfo">
                 <!-- 面包屑 -->
 
@@ -37,7 +45,7 @@
                 </div>
                 <dl class="info">
                     <dt>{{cs_name}}</dt>
-                    <dd>{{tc_name}}</dd>t
+                    <dd>讲师：{{tc_name}}</dd>t
                 </dl>
             </div>
             <!-- 步聚 -->
@@ -79,11 +87,11 @@
                     <p class="tips">
                         可上传jpg, gif, png格式文件, 图片建议尺寸大于300x150，文件大小不能超过2M。
                     </p>
-                    <div class="col-xs-2">
+                    <div class="col-xs-2 upfile">
                         <input type="file"id="upfile" class="btn btn-success btn-sm"value="选择图片">
                     </div>
                     <div class="col-xs-2">
-                        <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+                        <input type="button"value="裁切图片"id='cropBtn' {{ if !cs_cover_original}} disabled {{/if}}>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 /**
  * Created by thinkpad on 2017/3/21.
  */
-define(['jquery','template','ckeditor','region','validate','form','datepicker','language','uploadify'],function ($,template,CKEDITOR) {
+define(['jquery','template','ckeditor','region','validate','form','datepicker','language','uploadify','language'],function ($,template,CKEDITOR) {
      // 查询个人中心信息
     $.ajax({
         type:'get',
